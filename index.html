@@ -2,7 +2,7 @@
     <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
            <title>CCA_TASK</title>  
            <link rel="stylesheet" href="style.css">
@@ -11,24 +11,35 @@
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
           </head>
 
-      <body style="background-image: url('image1.png'); height: 100%;">
+      <body style="background-image: url('image1.png'); height: 100%;width: 100%; background-repeat: no-repeat;">
 
           <h3 style="text-align: center;margin-top: 0.8em;"> <font color="white" >REGISTER!! IF INTERESTED IN WEB DEVELOPMENT</font></h3>
           
+          <h5>
+            <div style="margin: 0; padding: 0;">
+                <a href="#">HOME </a>
+                <a href="#">WDCT</a>
+                <a href="#">WEB DEVELOPMENT </a>
+                <a href="#">ABOUT US</a>
+                <a href="#">CONTACT</a></div>
+            </h5>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         
         <div class="card" style="border-width: 3px;">
-             <form>
-                  <label for="name">&nbsp &nbsp HI,MY NAME IS</label>
+             <form style="font-size: 25px; text-align: center;">
+                  <label for="name"> HI,MY NAME IS</label>
                   <input style="background: transparent; border: none; border-bottom: 1px solid black;" type="text" id="name" name="name">
              </form>
 
-             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" >
                 <div class="carousel-inner">
+                  <div class="carousel-item">
+                    <img src="Screenshot (62).png" class="d-block w-100" alt="WEB_DEVELOPMENT">
+                  </div>
                   <div class="carousel-item active">
-                    <img src="CCA.jpg" class="d-block w-100" alt="CCA">
-
+                    <img src="CCA (2).jpg" class="d-block w-100" alt="CCA">
                   </div>
                   <div class="carousel-item">
                     <img src="wdct.png" class="d-block w-100" alt="WDCT">
@@ -49,16 +60,16 @@
               <div>
                 <table class="center">
                     <tr>
-                        <th><img src="js.png" style="width: 60px; height: 80px;margin-right: 4em; "></th>
-                        <th><img src="html.jpg" style="width:60px; height: 80px;margin-right: 2.9em;"></th>
-                        <th><img src="css.png" style="width: 60px; height: 80px;"></th>
+                        <th><img src="js.png" style="width: 250px; height: 230px;padding: 1.5em;"></th>
+                        <th><img src="html.jpg" style="width:250px; height: 230px;padding: 1.5em;"></th>
+                        <th><img src="css.png" style="width: 250px; height: 230px;padding: 1.5em;"></th>
                     </tr>
                 </table>
               </div>
-                 <form style="font-size:11.5px;margin-top: 2em;">
-                            <label for="mail">E.mail</label>
+                 <form style="font-size:30px;margin-top: 2em;">
+                            <label style="margin-left: 1em;" for="mail">E.mail</label>
                             <input type="text" id="mail" name="mail">
-                            <label for="contact">Contact</label>
+                            <label style="margin-left: 12em;" for="contact">Contact</label>
                             <input type="text" id="contact" name="contact">
                  </form>    
                  <button class="btn btn-primary" id="myBtn">SUBMIT</button>
