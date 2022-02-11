@@ -9,10 +9,12 @@
 }
 a{
     padding: 0 10px;
-    text-decoration: none;
 }
 .carousel-item {
   text-align: center;
+}
+a:hover{
+    background-color: rgb(42, 13, 207);
 }
 label{
     margin-top: 0.8em;
