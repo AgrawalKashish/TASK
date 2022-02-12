@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>WDCT</title>
+        <link rel="stylesheet" href="weather.css">
+
+           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body style="background-image: url(img.jpg); background-repeat: no-repeat; height: 100%;width: 100%;">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="wdct.html">WDCT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">ABOUT US</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link ">CONTACT</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="app">  
+            <h2> WEATHER</h2>
+               <input type="text" id="currentDate" class="date">  
+              <div class="msg">Enter city name</div>
+          
+          <div class="searchinputbox">
+              <input type="text" id="input" class="input" placeholder="type here">
+          </div>
+          <div class="weather-body">
+            <div class="location">
+                <div class="city" id="city">Udaipur
+                </div>
+                <div class="weatherstatus"> 
+                    <div class="temp" id="temp"> 34&deg;C</div>
+                    <div class="min-max" id="min-max">Min-32&deg;C /Max-34&deg;C</div>
+                    <div class="wtype" id="wtype">haze</div>
+                </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        <div class="footer" id="footer">
+          <input type="text" id="currentTime" class="time">
+            <footer class="page-footer font-small special-color-dark pt-4">
+             <div class="container">
+               <div class="row">
+                 <div class="col-md-6 mb-4">
+                   <form class="form-inline">
+                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                       aria-label="Search">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                   </form>
+                   
+                 </div>
+                   <div class="col-md-6 mb-4">
+   
+                     <form class="input-group">
+                       <input type="text" class="form-control form-control-sm" placeholder="Your email"
+                         aria-label="Your email" aria-describedby="basic-addon2">
+                       <div class="input-group-append">
+                         <button class="btn btn-sm btn-outline-white my-0" style="color: aliceblue;" type="button">Sign up</button>
+                       </div>
+                     </form>
+                   </div>
+               </div>
+            </div>   
+            <div class="footer-container"
+            style=" margin-bottom: 2em;">
+                <div class="footer">
+                 <div  class="container">
+                   <div class="row">
+                     <div class="col-sm">
+                    <div class="footer-heading footer-1">
+                        <h2 style="color: white;">About Us</h2>
+                        <a href="#" style="text-decoration: none;">Blog</a><br>
+                        <a href="#" style="text-decoration: none;">Demo</a><br>
+                        <a href="#" style="text-decoration: none;">Investors</a><br>
+                        <a href="#" style="text-decoration: none;">Customers</a>
+                    </div>
+                    </div>
+                    <div class="col-sm">
+                 <div class="footer-heading footer-3">
+                     <h2 style="color: white;">Social Media</h2>
+                     <a href="#" style="text-decoration: none;">Instagram</a><br>
+                     <a href="#" style="text-decoration: none;">Facebook</a><br>
+                     <a href="#" style="text-decoration: none;">Linkedin</a><br>
+                     <a href="#" style="text-decoration: none;">E-mail</a>
+                 </div>
+                </div>
+               </div>
+              </div>
+            </div>
+            </div>
+            </footer>
+            </div>   
+    </body>
+    <script>
+      var today = new Date();
+      var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+        document.getElementById("currentDate").value = date;
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        document.getElementById("currentTime").value = time;
+        const weatherapi={
+    key:"c3c33f5c928a7d83766e13a8b760c2dd" ,
+    baseUrl: "https://api.openweathermap.org/data/2.5/weather?"
+}
+
+const searchinputbox = document.getElementById('input');
+
+ searchinputbox.addEventListener('keypress',(event) =>{
+     if(event.keycode==13){
+        
+     
+     console.log(searchinputbox.value);
+    }
+
+     getreport(searchinputbox.value) 
+     document.querySelector('.weather-body').style.display="block";
+ });
+
+
+function getreport(city){
+    fetch(`${weatherapi.baseUrl}q=${city}&appid=${weatherapi.key}&units=metric` )
+    .then(weather => {
+        return weather.json();
+
+    }) .then(showweatherreport);
+}
+function showweatherreport(weather){
+     console.log(weather);
+
+     let city=document.getElementById('city');
+     city.innerText= `${weather.name}`
+
+
+     let temp=document.getElementById('temp');
+     temp.innerHTML=`${weather.main.temp}&deg;C`
+
+     let minmax=document.getElementById('min-max')
+      minmax.innerHTML=`${weather.main.temp_min}&deg;C(min)/${weather.main.temp_max}&deg;C(max)`
+         
+     let wtype=document.getElementById('wtype');
+     wtype.innerHTML=`${weather.weather[0].main}`
+}
+      </script>
+</html>

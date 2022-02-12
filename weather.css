@@ -1,0 +1,73 @@
+.footer{
+    background-color: rgb(0, 0, 0);
+  }
+  #footer {
+    position:absolute;
+    bottom:0;
+    width: 100%;
+ }
+ #currentDate{
+   border: none;
+ }
+ .date{
+   text-align: center;
+ }
+#currentTime{
+  border: none;
+  background-color: black;
+  color: antiquewhite;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.app {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vh;
+    padding: 30px;
+    text-align: center;
+    opacity: 0.8;
+}
+#input{
+    width: 100%;
+    background-color: rgb(248, 225, 96);
+    border: none;
+    height: 30px;
+    padding: 0 10px;
+    text-align: center; 
+}
+#wtype{
+    font-size:30px ;
+    padding: 20px;
+    color: royalblue;
+}
+.msg{
+ padding: 10px;
+}
+.weather-body{
+    display: none;
+    color: brown;
+    padding: 30px ;
+    line-height:2rem;
+    border-radius: 10px;
+}
+.location{
+    font-weight: bold;
+    font-size: 30px;
+}
+.temp{
+    font-size: 50px;
+    margin:20px 0;
+    text-shadow:2px 4px rgba(0, 0, 0, 0.3);
+}
+.min-max{
+    font-size: 15pt;
+    color: rgb(197, 159, 35); 
+}
+#wtype{
+    font-size:30px ;
+    padding: 20px;
+    color: royalblue;
+}

@@ -5,7 +5,7 @@
     border-radius: 25px;
 }
 .carousel-inner{
-  height: 600px;
+  height: 500px;
 }
 a{
     padding: 0 10px;
@@ -23,7 +23,6 @@ label{
 .container{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1em;
 }
 .modal {
     display: none;
@@ -45,7 +44,9 @@ label{
     font-size: 28px;
     font-weight: bold;
   }
-  
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+}
   .close:hover,
   .close:focus {
     color: black;
@@ -57,9 +58,21 @@ label{
       width: 100px;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 1em;
+      margin-bottom: .5em;
   }
   .modal-dialog{
       width: 250px;
   }
-  
+  .footer{
+    background-color: rgb(0, 0, 0);
+  }
+  #footer {
+    position:absolute;
+    bottom:0;
+    width: 100%;
+ }
+#currentTime{
+  border: none;
+  background-color: black;
+  color: antiquewhite;
+}
